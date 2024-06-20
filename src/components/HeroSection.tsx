@@ -3,7 +3,7 @@ import styles from "@/styles/HeroSection.module.css";
 
 const HeroSection = () => {
   return (
-    <div className={styles.container}>
+    <div className={` flex justify-center items-center`}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
           <Image
