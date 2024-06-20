@@ -1,20 +1,24 @@
-/* eslint-disable prettier/prettier */
-// src/components/HeroSection.tsx
-import Image from 'next/image';
+import Image from "next/image";
+import styles from "@/styles/HeroSection.module.css";
 
 const HeroSection = () => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', textAlign: 'center' }}>
-      <div>
-        <Image
-          src="/images/home1.jpg"
-          alt="Profile Picture"
-          width={1920}
-          height={1080}
-          style={{ borderRadius: '50%' }}
-        />
-        <h1 style={{ fontSize: '4rem', margin: '1rem 0' }}>MOBILE DEVELOPER</h1>
-        <p style={{ fontSize: '1.5rem' }}>Sensible to details</p>
+    <div className={styles.container}>
+      <div className={styles.container}>
+        <div className={styles.imageContainer}>
+          <Image
+            src="/images/home.png"
+            alt="Cover Image"
+            width={840}
+            height={818}
+            className={styles.image}
+          />
+        </div>
+        <div className={styles.textContainer}>
+          <h1 className={`${styles.title} font-bold`}>Mobile</h1>
+          <h2 className={styles.developer}>Developer</h2>
+          <h3 className={styles.subtitle}>Sensible to details</h3>
+        </div>
       </div>
     </div>
   );

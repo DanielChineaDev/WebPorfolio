@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Alinea los elementos al inicio para facilitar la superposición */
+  min-width:fit-content;
+  height: 100vh;
+  padding: 0 4rem; /* Agrega un margen para los bordes */
+  background-color: rgb(87, 0, 97);
+  position: relative;
+  z-index: -1;
+}
+
+.imageContainer {
+  flex: 0 0 auto; /* Evita que la imagen cambie de tamaño */
+  position: relative;
+  z-index: 1;
+  margin-left: 10rem; /* Ajusta este valor para superponer el texto */
+  background-color: rgba(255, 228, 196, 0.426);
+}
+
+.textContainer {
+  text-align: center;
+  text-transform: uppercase;
+  flex: 1;
+  background-color: rgba(255, 228, 196, 0.426);
+  padding: 0rem;
+  z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+  margin-left: -15rem; /* Ajusta este valor para superponer el texto */
+}
+
+.title {
+  font-size: 10rem;
+  letter-spacing: 0.2em;
+  margin: -4rem 0;
+  padding: 0;
+}
+
+.developer {
+  font-size: 6rem;
+  letter-spacing: 0.29em;
+}
+
+.subtitle {
+  font-size: 3rem;
+  letter-spacing: 0.348em;
+  font-weight: 100;
+}
