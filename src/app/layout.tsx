@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
       <head>
-        <title>My Portfolio</title>
+        <title>José Daniel Chinea Marrero - Portfolio</title>
         <meta name="description" content="Welcome to my portfolio website" />
       </head>
       <body>
