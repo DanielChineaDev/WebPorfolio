@@ -8,6 +8,7 @@
   padding: 0 4rem; /* Agrega un margen para los bordes */
   position: relative;
   z-index: -1;
+  background-color: blueviolet;
 }
 
 .imageContainer {
