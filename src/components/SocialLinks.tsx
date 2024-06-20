@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const SocialLinks = () => {
   return (
-    <div style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: '1rem' }}>
+    <div style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', left: '2.5rem' }}>
       <a href="https://github.com" style={{ display: 'block', margin: '1rem 0' }}>
         <FaGithub size="1.5rem" color="#fff" />
       </a>
