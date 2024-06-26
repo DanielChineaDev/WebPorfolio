@@ -1,21 +1,40 @@
-/* eslint-disable prettier/prettier */
-// src/components/Navbar.tsx
-import Link from "next/link";
+"use client";
+import React from "react";
 
-const Navbar = () => {
+interface NavbarProps {
+  onSectionChange: (sectionIndex: number) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onSectionChange }) => {
   return (
     <nav className="fixed top-0 left-0 w-full text-white z-50 flex justify-between items-center p-10">
-      <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>DANIEL CHINEA</div>
+      <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+      <span
+          onClick={() => onSectionChange(0)}
+          style={{ margin: "0 3rem", cursor: "pointer" }}
+        >
+        DANIEL CHINEA
+        </span>
+      </div>
       <div className={`uppercase tracking-widest text-xl`}>
-        <Link href="/about" style={{ margin: '0 3rem' }}>
-          About
-        </Link>
-        <Link href="/portfolio" style={{ margin: '0 3rem' }}>
-          Portfolio
-        </Link>
-        <Link href="/contact" style={{ margin: '0 0 0 3rem' }}>
+        <span
+          onClick={() => onSectionChange(1)}
+          style={{ margin: "0 3rem", cursor: "pointer" }}
+        >
+          About me
+        </span>
+        <span
+          onClick={() => onSectionChange(2)}
+          style={{ margin: "0 3rem", cursor: "pointer" }}
+        >
+          Projects
+        </span>
+        <span
+          onClick={() => onSectionChange(3)}
+          style={{ margin: "0 3rem 0 0", cursor: "pointer" }}
+        >
           Contact
-        </Link>
+        </span>
       </div>
     </nav>
   );
