@@ -1,20 +1,16 @@
 "use client";
 
 import React from "react";
-import styles from "@/styles/Pages.module.css";
+import styles from "@/styles/PageIndicator.module.css";
 
 interface PageIndicatorProps {
   currentPage: number;
-  totalPages: number;
 }
 
-const PageIndicator: React.FC<PageIndicatorProps> = ({
-  currentPage,
-  totalPages,
-}) => {
+const PageIndicator: React.FC<PageIndicatorProps> = ({ currentPage }) => {
   return (
     <div className={styles.pageIndicator}>
-      <span>{currentPage}</span>/<span>{totalPages}</span>
+      <span>0{currentPage}</span>
     </div>
   );
 };

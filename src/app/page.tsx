@@ -1,4 +1,3 @@
-// src/app/page.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -6,51 +5,61 @@ import HeroSection from "@/components/HeroSection";
 import NextSection from "@/components/NextSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import PageIndicator from "@/components/PageIndicator";
-import styles from "@/styles/Pages.module.css";
+import styles from "@/styles/page.module.css";
 
-const HomePage: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
+const Home: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(0);
   const totalPages = 4; // Total de secciones/páginas
+  let isThrottled = false;
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll(".section");
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+    const handleScroll = (event: WheelEvent) => {
+      if (isThrottled) return;
 
-      sections.forEach((section, index) => {
-        if (
-          section.offsetTop <= scrollPosition &&
-          section.offsetTop + section.clientHeight > scrollPosition
-        ) {
-          setCurrentPage(index + 1);
-        }
-      });
+      if (event.deltaY > 0 || event.deltaX > 0) {
+        setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1));
+      } else {
+        setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
+      }
+
+      isThrottled = true;
+      setTimeout(() => {
+        isThrottled = false;
+      }, 800); // Aumenta el tiempo de throttling para evitar cambios rápidos
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleScroll, { passive: false });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleScroll);
     };
-  }, []);
+  }, [totalPages]);
 
   return (
-    <main>
-      <div className={styles.section} style={{ backgroundColor: "#282c34" }}>
+    <div className={styles.container}>
+      <div
+        className={`${styles.section} ${currentPage === 0 ? styles.visible : styles.hidden} ${styles.section0}`}
+      >
         <HeroSection />
       </div>
-      <div className={styles.section} style={{ backgroundColor: "#61dafb" }}>
+      <div
+        className={`${styles.section} ${currentPage === 1 ? styles.visible : styles.hidden} ${styles.section1}`}
+      >
         <NextSection />
       </div>
-      <div className={styles.section}>
+      <div
+        className={`${styles.section} ${currentPage === 2 ? styles.visible : styles.hidden} ${styles.section2}`}
+      >
         <ProjectsSection />
       </div>
-      <div className={styles.section} style={{ backgroundColor: "#20232a" }}>
+      <div
+        className={`${styles.section} ${currentPage === 3 ? styles.visible : styles.hidden} ${styles.section3}`}
+      >
         <h1>Sección 4</h1>
       </div>
-      <PageIndicator currentPage={currentPage} totalPages={totalPages} />
-    </main>
+      <PageIndicator currentPage={currentPage + 1} />
+    </div>
   );
 };
 
-export default HomePage;
+export default Home;
