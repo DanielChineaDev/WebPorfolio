@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import styles from "@/styles//ProjectsSection.module.css";
+import styles from "@/styles/ProjectsSection.module.css";
 
 interface Project {
   title: string;
