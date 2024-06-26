@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "@/styles/HeroSection.module.css";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   return (
     <div className={` flex justify-center items-center`}>
       <div className={styles.container}>
