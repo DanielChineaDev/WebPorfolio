@@ -1,0 +1,66 @@
+/* Styling for the section to take full viewport height */
+.section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  flex-direction: column; /* Stack elements vertically */
+  padding: 0 20px; /* Add some padding for better layout on small screens */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Max width to limit the container on large screens */
+  margin: 0 auto; /* Center the container */
+  text-align: center;
+}
+
+/* Grid layout for the project cards */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  grid-template-rows: repeat(2, 1fr); /* Two rows */
+  gap: 4rem; /* Gap between grid items */
+}
+
+/* Styling for each project card */
+.projectCard {
+  background: #fff;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 15px;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+/* Hover effect for project cards */
+.projectCard:hover {
+  transform: translateY(-10px);
+}
+
+/* Styling for project titles */
+.projectCard h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Styling for project links */
+.projectCard a {
+  color: #fff;
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for project links */
+.projectCard a:hover {
+  background-color: #333;
+}

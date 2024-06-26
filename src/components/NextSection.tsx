@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/styles/NextSection.module.css";
 
-const NextSection = () => {
+const NextSection: React.FC = () => {
   return (
     <div className={`section ${styles.nextSection}`}>
       <div className="flex items-center justify-center h-screen">
