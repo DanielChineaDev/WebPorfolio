@@ -3,6 +3,7 @@
 import { ReactNode } from 'react';
 import Navbar from '@/components/Navbar';
 import SocialLinks from '@/components/SocialLinks';
+
 import '@/styles/globals.css';
 
 interface LayoutProps {

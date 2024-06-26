@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import NextSection from "@/components/NextSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import PageIndicator from "@/components/PageIndicator";
+import ScrollDownIndicator from "@/components/ScrollDownIndicator";
 import styles from "@/styles/page.module.css";
 
 const Home: React.FC = () => {
@@ -26,7 +27,7 @@ const Home: React.FC = () => {
       isThrottled = true;
       setTimeout(() => {
         isThrottled = false;
-      }, 800); // Aumenta el tiempo de throttling para evitar cambios rápidos
+      }, 1100); // Aumenta el tiempo de throttling para evitar cambios rápidos
     };
 
     window.addEventListener("wheel", handleScroll, { passive: false });
@@ -38,6 +39,14 @@ const Home: React.FC = () => {
 
   const handleMenuClick = (pageIndex: number) => {
     setCurrentPage(pageIndex);
+  };
+
+  const handleScrollDownClick = () => {
+    if (currentPage === totalPages - 1) {
+      setCurrentPage(0);
+    } else {
+      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1));
+    }
   };
 
   return (
@@ -69,10 +78,11 @@ const Home: React.FC = () => {
           <h1>Sección 4</h1>
         </div>
         <PageIndicator currentPage={currentPage + 1} />
-        <div className={styles.scrollDownContainer}>
-          <div className={styles.scrollText}>scroll down</div>
-          <div className={styles.arrow}></div>
-        </div>
+        <ScrollDownIndicator
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onScrollClick={handleScrollDownClick}
+        />
       </div>
     </div>
   );
