@@ -52,13 +52,6 @@ const ProjectsSection: React.FC = () => {
   return (
     <section id="projects" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.heading}>
-          <h2
-            className={`animate__animated ${inView ? "animate__fadeInDown" : ""}`}
-          >
-            Proyectos Realizados
-          </h2>
-        </div>
         <div className={styles.projectGrid} ref={ref}>
           {projects.map((project, index) => (
             <div
@@ -67,9 +60,9 @@ const ProjectsSection: React.FC = () => {
               style={{ backgroundColor: project.color }}
             >
               <h3>{project.title}</h3>
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                Ver en GitHub
-              </a>
+{/*               <a href={project.link} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a> */}
             </div>
           ))}
         </div>

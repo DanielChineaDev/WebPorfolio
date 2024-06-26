@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar"; // Asegúrate de importar el Navbar
 import HeroSection from "@/components/HeroSection";
 import NextSection from "@/components/NextSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -35,29 +36,44 @@ const Home: React.FC = () => {
     };
   }, [totalPages]);
 
+  const handleMenuClick = (pageIndex: number) => {
+    setCurrentPage(pageIndex);
+  };
+
   return (
-    <div className={styles.container}>
-      <div
-        className={`${styles.section} ${currentPage === 0 ? styles.visible : styles.hidden} ${styles.section0}`}
-      >
-        <HeroSection />
+    <div>
+      <Navbar onSectionChange={handleMenuClick} />
+      <div className={styles.container}>
+        <div
+          id="section0"
+          className={`${styles.section} ${currentPage === 0 ? styles.visible : styles.hidden} ${styles.section0}`}
+        >
+          <HeroSection />
+        </div>
+        <div
+          id="section1"
+          className={`${styles.section} ${currentPage === 1 ? styles.visible : styles.hidden} ${styles.section1}`}
+        >
+          <NextSection />
+        </div>
+        <div
+          id="section2"
+          className={`${styles.section} ${currentPage === 2 ? styles.visible : styles.hidden} ${styles.section2}`}
+        >
+          <ProjectsSection />
+        </div>
+        <div
+          id="section3"
+          className={`${styles.section} ${currentPage === 3 ? styles.visible : styles.hidden} ${styles.section3}`}
+        >
+          <h1>Sección 4</h1>
+        </div>
+        <PageIndicator currentPage={currentPage + 1} />
+        <div className={styles.scrollDownContainer}>
+          <div className={styles.scrollText}>scroll down</div>
+          <div className={styles.arrow}></div>
+        </div>
       </div>
-      <div
-        className={`${styles.section} ${currentPage === 1 ? styles.visible : styles.hidden} ${styles.section1}`}
-      >
-        <NextSection />
-      </div>
-      <div
-        className={`${styles.section} ${currentPage === 2 ? styles.visible : styles.hidden} ${styles.section2}`}
-      >
-        <ProjectsSection />
-      </div>
-      <div
-        className={`${styles.section} ${currentPage === 3 ? styles.visible : styles.hidden} ${styles.section3}`}
-      >
-        <h1>Sección 4</h1>
-      </div>
-      <PageIndicator currentPage={currentPage + 1} />
     </div>
   );
 };
