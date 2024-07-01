@@ -9,7 +9,11 @@ interface ScrollDownIndicatorProps {
   onScrollClick: () => void;
 }
 
-const ScrollDownIndicator: React.FC<ScrollDownIndicatorProps> = ({ currentPage, totalPages, onScrollClick }) => {
+const ScrollDownIndicator: React.FC<ScrollDownIndicatorProps> = ({
+  currentPage,
+  totalPages,
+  onScrollClick,
+}) => {
   const isLastPage = currentPage === totalPages - 1;
   const [visible, setVisible] = useState(true);
   const [text, setText] = useState("scroll down");
@@ -32,13 +36,23 @@ const ScrollDownIndicator: React.FC<ScrollDownIndicatorProps> = ({ currentPage, 
     <div
       className={styles.scrollDownContainer}
       onClick={onScrollClick}
-      style={{ cursor: isLastPage ? 'pointer' : 'auto' }} // Cambiar el cursor a pointer si es la última página
+      style={{ cursor: isLastPage ? "pointer" : "auto" }} // Cambiar el cursor a pointer si es la última página
     >
-      {showArrowTop && <div className={`${styles.arrowTop} ${!visible ? styles.fadeOut : styles.fadeIn}`}></div>}
-      <div className={`${styles.scrollText} ${!visible ? styles.fadeOut : styles.fadeIn}`}>
+      {showArrowTop && (
+        <div
+          className={`${styles.arrowTop} ${!visible ? styles.fadeOut : styles.fadeIn}`}
+        ></div>
+      )}
+      <div
+        className={`${styles.scrollText} ${!visible ? styles.fadeOut : styles.fadeIn}`}
+      >
         {text}
       </div>
-      {showArrowBottom && <div className={`${styles.arrowBottom} ${!visible ? styles.fadeOut : styles.fadeIn}`}></div>}
+      {showArrowBottom && (
+        <div
+          className={`${styles.arrowBottom} ${!visible ? styles.fadeOut : styles.fadeIn}`}
+        ></div>
+      )}
     </div>
   );
 };
