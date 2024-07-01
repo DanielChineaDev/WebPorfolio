@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Web Portfolio
 
 Welcome to my professional portfolio website. This project showcases my work, skills, and experiences as a developer.
@@ -57,8 +56,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
-```bash
->>>>>>> develop
 npm run dev
 # or
 yarn dev
@@ -66,8 +63,6 @@ yarn dev
 pnpm dev
 # or
 bun dev
-<<<<<<< HEAD
-
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
