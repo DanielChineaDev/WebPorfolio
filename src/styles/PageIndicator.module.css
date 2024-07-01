@@ -1,11 +1,38 @@
-.pageIndicator {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    margin: -1rem 1rem ;    
-    font-size: 10rem;
-    font-weight: bold;
-    z-index: 2;
-    text-decoration: underline;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.pageIndicator {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  margin: -1rem 1rem;
+  font-size: 10rem;
+  font-weight: bold;
+  opacity: 0; /* Inicia oculto */
+  z-index: 2;
+  animation: fadeIn 1s ease forwards 0.5s;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}

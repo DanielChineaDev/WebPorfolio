@@ -27,7 +27,7 @@ const Home: React.FC = () => {
       isThrottled = true;
       setTimeout(() => {
         isThrottled = false;
-      }, 1100); // Aumenta el tiempo de throttling para evitar cambios rápidos
+      }, 800); // Aumenta el tiempo de throttling para evitar cambios rápidos
     };
 
     window.addEventListener("wheel", handleScroll, { passive: false });
