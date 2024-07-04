@@ -1,8 +1,6 @@
-// src/app/layout.tsx
 "use client";
 
-
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Navbar from "@/components/Navbar";
 import SocialLinks from "@/components/SocialLinks";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -14,6 +12,12 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const [currentSection, setCurrentSection] = useState(0);
+
+  const handleSectionChange = (sectionIndex: number) => {
+    setCurrentSection(sectionIndex);
+  };
+
   return (
     <html lang="en">
       <head>
@@ -21,7 +25,7 @@ const Layout = ({ children }: LayoutProps) => {
         <meta name="description" content="Welcome to my portfolio website" />
       </head>
       <body>
-        <Navbar />
+        <Navbar onSectionChange={handleSectionChange} />
         <SocialLinks />
         <ParticlesBackground />
         {children}
