@@ -24,7 +24,7 @@
   margin: -1rem 1rem;
   font-size: 10rem;
   font-weight: bold;
-  opacity: 0; /* Inicia oculto */
+  opacity: 0;
   z-index: 2;
   animation: fadeIn 1s ease forwards 0.5s;
 }

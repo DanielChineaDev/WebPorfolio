@@ -1,7 +1,18 @@
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInScale {
   0% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.6);
   }
   100% {
     opacity: 1;
@@ -46,6 +57,8 @@
   letter-spacing: 0.2em;
   margin: -5rem 0;
   padding-left: 1.5rem;
+  opacity: 0; /* Inicia oculto */
+  animation: fadeInSlideDown 2s ease forwards;
 }
 
 .developer {
@@ -53,6 +66,9 @@
   letter-spacing: 0.28em;
   margin: 0;
   padding-left: 0.9rem;
+  opacity: 0; /* Inicia oculto */
+  animation: fadeInSlideDown 2s ease forwards;
+  animation-delay: 1s; /* Retrasar la animación para que ocurra después del título */
 }
 
 .subtitle {
@@ -60,4 +76,7 @@
   letter-spacing: 0.33em;
   font-weight: 100;
   padding-left: 0.54rem;
+  opacity: 0; /* Inicia oculto */
+  animation: fadeInSlideDown 2s ease forwards;
+  animation-delay: 2s; /* Retrasar la animación para que ocurra después del developer */
 }

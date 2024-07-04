@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Navbar from "@/components/Navbar"; // Asegúrate de importar el Navbar
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import NextSection from "@/components/NextSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
         </div>
         <div
           id="section3"
-          className={`${styles.section} ${currentPage === 3 ? styles.visible : styles.hidden} ${styles.section3}`}
+          className={`${styles.section} ${currentPage === 3 ? styles.visible : styles.hidden}`}
         >
           <h1>Sección 4</h1>
         </div>

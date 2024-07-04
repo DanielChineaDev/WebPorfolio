@@ -1,10 +1,13 @@
-/* eslint-disable prettier/prettier */
 // src/app/layout.tsx
-import { ReactNode } from 'react';
-import Navbar from '@/components/Navbar';
-import SocialLinks from '@/components/SocialLinks';
+"use client";
 
-import '@/styles/globals.css';
+
+import { ReactNode } from "react";
+import Navbar from "@/components/Navbar";
+import SocialLinks from "@/components/SocialLinks";
+import ParticlesBackground from "@/components/ParticlesBackground";
+
+import "@/styles/globals.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,6 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
       <body>
         <Navbar />
         <SocialLinks />
+        <ParticlesBackground />
         {children}
       </body>
     </html>

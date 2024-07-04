@@ -9,10 +9,6 @@
     z-index: 1;
   }
   
-  .nextSection {
-    background: #e0e0e0; /* Cambia esto según tu diseño */
-  }
-  
   .hidden {
     opacity: 0;
     z-index: -1;
