@@ -36,7 +36,7 @@ const ScrollDownIndicator: React.FC<ScrollDownIndicatorProps> = ({
     <div
       className={styles.scrollDownContainer}
       onClick={onScrollClick}
-      style={{ cursor: isLastPage ? "pointer" : "auto" }} // Cambiar el cursor a pointer si es la última página
+      style={{ cursor: "pointer" }} // Cambiar el cursor a pointer si es la última página
     >
       {showArrowTop && (
         <div

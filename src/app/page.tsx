@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import NextSection from "@/components/NextSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
 import PageIndicator from "@/components/PageIndicator";
 import ScrollDownIndicator from "@/components/ScrollDownIndicator";
 import styles from "@/styles/page.module.css";
@@ -75,7 +76,7 @@ const Home: React.FC = () => {
           id="section3"
           className={`${styles.section} ${currentPage === 3 ? styles.visible : styles.hidden}`}
         >
-          <h1>Sección 4</h1>
+          <ContactSection />
         </div>
         <PageIndicator currentPage={currentPage + 1} />
         <ScrollDownIndicator

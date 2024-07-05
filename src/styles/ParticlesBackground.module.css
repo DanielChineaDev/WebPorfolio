@@ -1,0 +1,17 @@
+/* ParticlesBackground.module.css */
+.particlesContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: opacity 3s ease-in-out, filter 3s ease-in-out; /* Transición suave de opacidad y filtro */
+    filter: blur(8px); /* Comienza con blur */
+    background-color: #000; /* Fondo opcional si se necesita */
+  }
+  
+  .visible {
+    opacity: 1; /* Cambia a opacidad completa */
+    filter: none; /* Remueve el filtro blur */
+  }
+  

@@ -1,0 +1,61 @@
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.contactCard {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 450px; /* Altura fija para la tarjeta */
+  background: #313131ab;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.left, .right {
+  flex: 1;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+}
+
+.right {
+  width: 50%;
+  padding: 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.right p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.right p strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.right a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.right a:hover {
+  text-decoration: underline;
+}
