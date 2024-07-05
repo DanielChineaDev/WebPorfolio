@@ -6,6 +6,7 @@ import SocialLinks from "@/components/SocialLinks";
 import ParticlesBackground from "@/components/ParticlesBackground";
 
 import "@/styles/globals.css";
+import LoopingVideo from "@/components/LoopingVideo";
 
 interface LayoutProps {
   children: ReactNode;
@@ -27,7 +28,8 @@ const Layout = ({ children }: LayoutProps) => {
       <body>
         <Navbar onSectionChange={handleSectionChange} />
         <SocialLinks />
-        <ParticlesBackground />
+        <LoopingVideo src="/video/video.mp4" blurAmount={50} />
+        {/* <ParticlesBackground /> */}
         {children}
       </body>
     </html>
